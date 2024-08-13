@@ -5,7 +5,7 @@
 import {Provider} from 'react-redux';
 import Screen from './utils/screenManager';
 import store from './store/store';
-import './style/global.css';
+// import './styles/global.css';
 
 /**
  * This component renders the application wrapped on a redux store and a navigator.
