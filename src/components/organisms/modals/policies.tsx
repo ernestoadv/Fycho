@@ -2,7 +2,6 @@
  * @packageDocumentation
  * Policies modal.
  */
-import Back from '../../molecules/buttons/navigation';
 import Scroll from '../../molecules/scroll';
 import fontStyles from '../../../style/fonts';
 import useTheme from '../../../hooks/useTheme';
@@ -42,7 +41,6 @@ export default function Policies() {
           );
         })}
       </Scroll>
-      <Back style={{opacity: 0}} />
     </>
   );
 }

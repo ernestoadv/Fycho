@@ -11,15 +11,6 @@ import {TextPalette} from '../assets/palettes';
 /***********/
 
 /**
- * Defines a global achromatic colors palette.
- */
-export interface Achromatic {
-  black: Color;
-  grey: Color;
-  white: Color;
-}
-
-/**
  * Defines different opacities for a specific color.
  */
 export interface Alpha {
@@ -51,6 +42,15 @@ export interface Alpha {
 }
 
 /**
+ * Defines a global achromatic colors palette.
+ */
+export interface Achromatic {
+  black: Color;
+  grey: Color;
+  white: Color;
+}
+
+/**
  * Defines the main colors a palette must contain.
  * A palette consists on several colors based on the same color scheme.
  */
@@ -69,11 +69,29 @@ export interface Chromatic {
  */
 export interface Literals {
   /**
+   * Calendar literals.
+   */
+  calendar: {
+    /**
+     * Calendar page title.
+     */
+    title: string;
+  };
+  /**
    * Contact modal literals.
    */
   contact: {
     email: string;
     phone: string;
+  };
+  /**
+   * Home literals.
+   */
+  home: {
+    /**
+     * Home page title.
+     */
+    title: string;
   };
   /**
    * Information modal literals.
@@ -97,21 +115,33 @@ export interface Literals {
     terms: string;
   };
   /**
-   * Login modal literals.
+   * Login page literals.
    */
   login: {
+    /**
+     * Login text.
+     */
+    button: string;
     /**
      * Email placeholder.
      */
     email: string;
     /**
-     * Login text.
-     */
-    login: string;
-    /**
      * Password placeholder.
      */
     password: string;
+    /**
+     * Subtitle text.
+     */
+    subtitle: string;
+    /**
+     * Reset password button text.
+     */
+    resetPassword: string;
+    /**
+     * Title text.
+     */
+    title: string;
   };
   /**
    * Terms & conditions and privacy policy modal literals.
@@ -153,21 +183,38 @@ export interface Literals {
     };
   };
   /**
+   * Profile literals.
+   */
+  profile: {
+    /**
+     * Profile page title.
+     */
+    title: string;
+  };
+  /**
    * Reset password modal literals.
    */
-  resetPassword: {
-    /**
-     * Contact information. Email.
-     */
-    contact: string;
+  reset: {
     /**
      * Modal informative text.
      */
     info: string;
     /**
-     * Send button text.
+     * Login text.
      */
-    send: string;
+    button: string;
+    /**
+     * Email placeholder.
+     */
+    email: string;
+    /**
+     * Subtitle text.
+     */
+    subtitle: string;
+    /**
+     * Title text.
+     */
+    title: string;
   };
 }
 
@@ -179,16 +226,58 @@ export interface Literals {
  * Defines the colors that different components will display for a specific theme.
  */
 export interface Theme {
+  login: {
+    button: {
+      login: {
+        border: Color;
+        container: Color;
+        text: Color;
+      };
+      resetPassword: {
+        border: Color;
+        container: Color;
+        text: Color;
+      };
+    };
+    input: {
+      border: Color;
+      container: Color;
+      icon: Color;
+      placeholder: Color;
+      text: Color;
+    };
+    subtitle: Color;
+    title: Color;
+  };
+  reset: {
+    button: {
+      border: Color;
+      container: Color;
+      text: Color;
+    };
+    input: {
+      border: Color;
+      container: Color;
+      icon: Color;
+      placeholder: Color;
+      text: Color;
+    };
+    subtitle: Color;
+    title: Color;
+  };
+  /**
+   * REFACTOR ABOVE
+   */
   /**
    * Background view colors.
    */
   background: {
     /**
-     * Login page background.
+     * Initial template background.
      */
-    login: Color;
+    initial: Color;
     /**
-     * Default page background.
+     * Main template background.
      */
     main: Color;
   };
@@ -196,6 +285,10 @@ export interface Theme {
    * Button components available colors.
    */
   button: {
+    /**
+     * Contrast button background color.
+     */
+    contrast: Color;
     /**
      * Default button background color.
      */
@@ -239,6 +332,10 @@ export interface Theme {
        */
       inactive: Color;
     };
+    /**
+     * Menu title color
+     */
+    title: Color;
   };
   /**
    * Modal view colours.

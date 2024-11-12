@@ -9,7 +9,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useMemo} from 'react';
 
 // Components
-import Button from '../components/molecules/buttons/navigation';
 import Modal from '../components/atoms/modal';
 
 // Modals
@@ -141,7 +140,6 @@ export default function ModalManager() {
   return modal ? (
     <>
       <Modal {...modal} />
-      <Button {...button} />
     </>
   ) : null;
 }

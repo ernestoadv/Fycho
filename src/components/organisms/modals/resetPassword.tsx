@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   input: {
-    borderRadius: 50,
     height: 50,
     paddingHorizontal: 20,
     width: 300,

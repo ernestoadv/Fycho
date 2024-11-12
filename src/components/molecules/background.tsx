@@ -3,7 +3,7 @@
  * Background view.
  */
 import {Color} from '../../types/types';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import DismissKeyboard from '../atoms/dismiss';
 

@@ -12,10 +12,8 @@ import {
 } from 'react-native';
 import {Icon} from '../../types/enums';
 import {Color} from '../../types/types';
-import commonStyles from '../../style/common';
 import IconManager from '../../utils/iconManager';
 import usePress from '../../hooks/usePress';
-import useTheme from '../../hooks/useTheme';
 
 /**
  * @notExported
@@ -59,31 +57,20 @@ interface Props {
  * @returns {React.JSX.Element} A React element that renders a button.
  */
 export default function Button({icon, style, text, callback}: Props) {
-  const [opacity, handlers] = usePress({callback});
-  const theme = useTheme();
+  const {opacity, handlers} = usePress({callback});
   return (
     <Pressable
       {...handlers}
+      testID={'buttonContainer'}
       style={[
-        {backgroundColor: theme.button.default, opacity},
+        {opacity},
         defaultStyle.container,
-        commonStyles.shadow,
         style?.container,
         icon && text ? defaultStyle.start : null,
-      ]}
-      testID={'buttonContainer'}>
+      ]}>
       {icon ? <IconManager color={style?.icon} icon={icon} /> : null}
       {text ? (
-        <Text
-          style={[
-            {
-              color: theme.text.white[100],
-            },
-            defaultStyle.text,
-            commonStyles.shadow,
-            style?.text,
-          ]}
-          testID={'buttonText'}>
+        <Text testID={'buttonText'} style={style?.text}>
           {text}
         </Text>
       ) : null}
@@ -94,7 +81,6 @@ export default function Button({icon, style, text, callback}: Props) {
 const defaultStyle = StyleSheet.create({
   container: {
     alignItems: 'center',
-    borderRadius: 50,
     display: 'flex',
     justifyContent: 'center',
   },
@@ -104,9 +90,5 @@ const defaultStyle = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingLeft: 30,
     gap: 15,
-  },
-  text: {
-    fontSize: 16,
-    fontWeight: 'bold',
   },
 });

@@ -57,12 +57,6 @@ export default function Modal({height, Component}: Props) {
    * Component animations and styling
    */
   const animation = {
-    entering: FadeIn.springify()
-      .delay(ANIMATION_DELAY)
-      .duration(ANIMATION_DURATION),
-    exiting: FadeOut.springify()
-      .delay(ANIMATION_DELAY)
-      .duration(ANIMATION_DURATION),
     height: useSharedValue(height),
     opacity: useSharedValue(0),
   };
@@ -96,7 +90,6 @@ export default function Modal({height, Component}: Props) {
 
   return (
     <Animated.View
-      entering={animation.entering}
       style={[
         defaultStyle.container,
         {
@@ -105,8 +98,7 @@ export default function Modal({height, Component}: Props) {
         },
       ]}>
       {display ? (
-        <Animated.View
-          style={[{opacity: animation.opacity}, defaultStyle.component]}>
+        <Animated.View style={defaultStyle.component}>
           <Component />
         </Animated.View>
       ) : null}
@@ -124,7 +116,6 @@ const defaultStyle = StyleSheet.create({
   },
   container: {
     alignSelf: 'center',
-    borderRadius: 50,
     justifyContent: 'center',
     maxHeight: Dimensions.get('window').height / 1.2,
     maxWidth: Dimensions.get('window').width / 1.1,

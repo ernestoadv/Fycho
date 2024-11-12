@@ -3,7 +3,15 @@
  * This module stores static SVGs as components.
  */
 import {Color} from '../types/types';
-import Svg, {ClipPath, Defs, G, Path} from 'react-native-svg';
+import Svg, {
+  ClipPath,
+  Defs,
+  G,
+  LinearGradient,
+  Path,
+  RadialGradient,
+  Stop,
+} from 'react-native-svg';
 import commonStyles from '../style/common';
 
 /****************/
@@ -33,8 +41,9 @@ interface Props {
 function Back({color, height, width}: Props) {
   return (
     <Svg
-      width={width || 26}
-      height={height || 16}
+      width={width || 36}
+      height={height || 22}
+      viewBox="0 0 26 16"
       fill="none"
       testID={'backIcon'}>
       <Path
@@ -43,6 +52,28 @@ function Back({color, height, width}: Props) {
         strokeLinejoin="round"
         strokeWidth={3}
         d="M23.04 8h-20M7.2 3 2 8l5.2 5"
+      />
+    </Svg>
+  );
+}
+
+/**
+ * Calendar icon.
+ */
+function Calendar({color, height, width}: Props) {
+  return (
+    <Svg
+      width={width || 24}
+      height={height || 23}
+      viewBox="0 0 27 26"
+      fill="none"
+      testID={'calendarIcon'}>
+      <Path
+        d="M4.071 4.429a1.714 1.714 0 00-1.714 1.714v16.285a1.714 1.714 0 001.714 1.715H22.93a1.715 1.715 0 001.714-1.715V6.143a1.715 1.715 0 00-1.714-1.714H19.5M2.357 10.428h22.286M7.5 1.857V7M19.5 1.857V7M7.5 4.429h8.571"
+        stroke={color || '#fff'}
+        strokeWidth={3}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </Svg>
   );
@@ -82,11 +113,10 @@ function Contact({color, height, width}: Props) {
 function Email({color, height, width}: Props) {
   return (
     <Svg
-      width={width || 16}
-      height={height || 14}
-      viewBox="0 0 14 12"
+      width={width || 32}
+      height={height || 20}
+      viewBox="0 0 16 12"
       fill="none"
-      style={[commonStyles.shadow]}
       testID={'emailIcon'}>
       <Path
         stroke={color || '#fff'}
@@ -114,14 +144,14 @@ function Home({color, height, width}: Props) {
       <Path
         d="M27.5 14.88C27.502 14.6024 27.446 14.3274 27.3358 14.0726C27.2256 13.8178 27.0636 13.5888 26.86 13.4L14.5 2L2.14005 13.4C1.9365 13.5888 1.77447 13.8178 1.66429 14.0726C1.5541 14.3274 1.49817 14.6024 1.50005 14.88V26C1.50005 26.5304 1.71076 27.0392 2.08583 27.4142C2.4609 27.7892 2.96962 28 3.50004 28H25.5C26.0304 28 26.5392 27.7892 26.9142 27.4142C27.2894 27.0392 27.5 26.5304 27.5 26V14.88Z"
         stroke={color || '#fff'}
-        strokeWidth="3"
+        strokeWidth={3}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <Path
         d="M14.5 28V20"
         stroke={color || '#fff'}
-        strokeWidth="3"
+        strokeWidth={3}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -163,11 +193,10 @@ function Info({color, height, width}: Props) {
 function Password({color, height, width}: Props) {
   return (
     <Svg
-      width={width || 16}
-      height={height || 14}
-      viewBox="0 0 14 12"
+      width={width || 32}
+      height={height || 24}
+      viewBox="0 0 16 14"
       fill="none"
-      style={[commonStyles.shadow]}
       testID={'passwordIcon'}>
       <Path
         stroke={color || '#fff'}
@@ -253,6 +282,38 @@ function Privacy({color, height, width}: Props) {
   );
 }
 
+/**
+ * Profile icon.
+ */
+function Profile({color, height, width}: Props) {
+  return (
+    <Svg
+      width={width || 23}
+      height={height || 24}
+      viewBox="0 0 29 30"
+      fill="none"
+      testID={'profileIcon'}>
+      <Path
+        d="M14.5 17a5 5 0 100-10 5 5 0 000 10zM5.96 24.8a9.998 9.998 0 0117.08 0"
+        stroke={color || '#fff'}
+        strokeWidth={3}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M14.5 28c7.18 0 13-5.82 13-13s-5.82-13-13-13-13 5.82-13 13 5.82 13 13 13z"
+        stroke={color || '#fff'}
+        strokeWidth={3}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
+/**
+ * Reset password icon.
+ */
 function ResetPassword({color, height, width}: Props) {
   return (
     <Svg
@@ -332,6 +393,7 @@ function Terms({color, height, width}: Props) {
 
 export {
   Back,
+  Calendar,
   Contact,
   Email,
   Home,
@@ -339,6 +401,7 @@ export {
   Password,
   Phone,
   Privacy,
+  Profile,
   ResetPassword,
   Terms,
 };

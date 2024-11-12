@@ -62,9 +62,15 @@ const Locales = {
  * Static literals in english.
  */
 const English: Literals = {
+  calendar: {
+    title: 'Calendar',
+  },
   contact: {
     email: 'info@cuydo.com',
     phone: '+34 644 690 480',
+  },
+  home: {
+    title: 'Home',
   },
   info: {
     contact: 'Contact information',
@@ -73,18 +79,26 @@ const English: Literals = {
     terms: 'Terms and conditions',
   },
   login: {
+    button: 'Log in',
     email: 'Email',
-    login: 'Login',
     password: 'Password',
+    subtitle: 'Sign in to continue',
+    resetPassword: 'Forgot password?',
+    title: 'Login',
+  },
+  profile: {
+    title: 'Profile',
   },
   policies: {
     privacy: privacy.en,
     terms: terms.en,
   },
-  resetPassword: {
-    contact: 'info@cuydo.com',
-    info: 'Introduce tu correo electrónico para recibir un código de recuperación. Si el problema persiste, contacta con ',
-    send: 'Enviar',
+  reset: {
+    button: 'Send',
+    email: 'Email',
+    subtitle:
+      'Introduce tu correo electrónico para recibir un código de recuperación.',
+    title: 'Reestablecer contraseña',
   },
 };
 
@@ -92,9 +106,15 @@ const English: Literals = {
  * Static literals in spanish.
  */
 const Spanish: Literals = {
+  calendar: {
+    title: 'Calendario',
+  },
   contact: {
     email: 'info@cuydo.com',
     phone: '+34 644 690 480',
+  },
+  home: {
+    title: 'Inicio',
   },
   info: {
     contact: 'Información de contacto',
@@ -103,18 +123,26 @@ const Spanish: Literals = {
     terms: 'Términos y condiciones',
   },
   login: {
+    button: 'Acceder',
     email: 'Correo electrónico',
-    login: 'Iniciar sesión',
     password: 'Contraseña',
+    resetPassword: '¿Has olvidado tu contraseña?',
+    subtitle: 'Identíficate para continuar',
+    title: 'Iniciar sesión',
+  },
+  profile: {
+    title: 'Perfil',
   },
   policies: {
     privacy: privacy.es,
     terms: terms.es,
   },
-  resetPassword: {
-    contact: 'info@cuydo.com',
-    info: 'Introduce tu correo electrónico para recibir un código de recuperación. Si el problema persiste, contacta con ',
-    send: 'Enviar',
+  reset: {
+    button: 'Enviar',
+    email: 'Correo electrónico',
+    subtitle:
+      'Introduce tu correo electrónico para recibir un código de recuperación.',
+    title: 'Reestablecer contraseña',
   },
 };
 

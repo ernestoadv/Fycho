@@ -9,12 +9,12 @@ import {
   TextInput,
   TextStyle,
   View,
+  ViewStyle,
 } from 'react-native';
+import {Color} from '../../types/types';
 import {Icon} from '../../types/enums';
-import {useMemo, useState} from 'react';
+import {useState} from 'react';
 import IconManager from '../../utils/iconManager';
-import commonStyles from '../../style/common';
-import useTheme from '../../hooks/useTheme';
 
 /**
  * @notExported
@@ -26,18 +26,9 @@ interface Props {
    */
   icon?: Icon;
   /**
-   * Input placeholder prior to user input.
+   * The text to set as placeholder.
    */
-  placeholder?: {
-    /**
-     * The color of the placeholder.
-     */
-    color?: string;
-    /**
-     * The text to set as placeholder.
-     */
-    text?: string;
-  };
+  placeholder?: string;
   /**
    * Whether the input text can be displayed or not. Useful to hide passwords.
    */
@@ -45,7 +36,24 @@ interface Props {
   /**
    * Input container and text style.
    */
-  style?: StyleProp<TextStyle>;
+  style?: {
+    /**
+     * Container style.
+     */
+    container?: StyleProp<ViewStyle>;
+    /**
+     * Icon color.
+     */
+    icon?: Color;
+    /**
+     * Text style.
+     */
+    input?: StyleProp<TextStyle>;
+    /**
+     * The color of the placeholder.
+     */
+    placeholder?: Color;
+  };
   /**
    * Keyboard type. Useful to identify if device is using Android or iOS.
    */
@@ -58,38 +66,23 @@ interface Props {
  */
 const Input = function Input({icon, placeholder, secure, style, type}: Props) {
   const [focused, setFocused] = useState(false);
-  const theme = useTheme();
-  const color = useMemo(
-    () => placeholder?.color || theme.text.white[100],
-    [placeholder, theme],
-  );
-
   return (
     <View
-      style={[defaultStyle.container, commonStyles.shadow]}
+      style={[defaultStyle.container, style?.container]}
       testID={'inputContainer'}>
+      <IconManager color={style?.icon} icon={icon} />
       <TextInput
         autoCapitalize={'none'}
         keyboardType={type}
-        placeholder={placeholder?.text}
-        placeholderTextColor={!focused ? color : 'transparent'}
+        placeholder={placeholder}
+        placeholderTextColor={!focused ? style?.placeholder : 'transparent'}
         secureTextEntry={secure}
-        selectionColor={color}
+        selectionColor={style?.placeholder}
         testID={'textInput'}
         onBlur={() => setFocused(false)}
         onFocus={() => setFocused(true)}
-        style={[
-          {
-            backgroundColor: theme.input.default,
-            color: theme.text.white[100],
-          },
-          defaultStyle.input,
-          style,
-        ]}
+        style={style?.input}
       />
-      <View style={[defaultStyle.icon]}>
-        <IconManager icon={icon} />
-      </View>
     </View>
   );
 };
@@ -97,14 +90,8 @@ const Input = function Input({icon, placeholder, secure, style, type}: Props) {
 const defaultStyle = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-  icon: {
-    position: 'absolute',
-    right: 20,
-  },
-  input: {
-    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
   },
 });
 

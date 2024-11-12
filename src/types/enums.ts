@@ -19,6 +19,7 @@ enum ColorScheme {
  */
 enum Icon {
   Back = 'back',
+  Calendar = 'calendar',
   Contact = 'contact',
   Email = 'email',
   Home = 'home',
@@ -26,6 +27,7 @@ enum Icon {
   Password = 'password',
   Phone = 'phone',
   Privacy = 'privacy',
+  Profile = 'profile',
   ResetPassword = 'resetPassword',
   Terms = 'terms',
 }

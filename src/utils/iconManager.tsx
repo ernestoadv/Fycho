@@ -4,13 +4,16 @@
  */
 import {
   Back,
+  Calendar,
   Contact,
   Email,
   Home,
   Info,
+  Logo,
   Password,
   Phone,
   Privacy,
+  Profile,
   ResetPassword,
   Terms,
 } from '../assets/svgs';
@@ -51,6 +54,8 @@ export default function IconManager({color, height, icon, width}: Props) {
     switch (icon) {
       case Icon.Back:
         return Back;
+      case Icon.Calendar:
+        return Calendar;
       case Icon.Contact:
         return Contact;
       case Icon.Email:
@@ -65,6 +70,8 @@ export default function IconManager({color, height, icon, width}: Props) {
         return Phone;
       case Icon.Privacy:
         return Privacy;
+      case Icon.Profile:
+        return Profile;
       case Icon.ResetPassword:
         return ResetPassword;
       case Icon.Terms:

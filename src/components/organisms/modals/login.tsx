@@ -52,7 +52,6 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   input: {
-    borderRadius: 50,
     height: 50,
     paddingHorizontal: 20,
     width: 300,

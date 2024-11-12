@@ -35,18 +35,18 @@ export default function usePress({
   callback,
   maxOpacity,
   minOpacity,
-}: Props = {}): [
-  opacity: number, // Opacity
+}: Props = {}): {
+  opacity: number; // Opacity
   handlers: {
     onPress: () => void;
     onPressIn: () => void;
     onPressOut: () => void;
-  },
-] {
+  };
+} {
   const [opacity, setOpacity] = useState(MAX_OPACITY);
-  return [
+  return {
     opacity,
-    {
+    handlers: {
       onPress: () => {
         callback && callback();
       },
@@ -57,5 +57,5 @@ export default function usePress({
         setOpacity(maxOpacity || MAX_OPACITY);
       },
     },
-  ];
+  };
 }
