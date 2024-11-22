@@ -1,4 +1,65 @@
 {
-  "name": "Fycho",
-  "displayName": "Fycho"
+  "expo": {
+    "name": "fycho",
+    "slug": "fycho",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/media/images/logo.background.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ernestoadv.fycho"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/media/images/logo.background.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/media/images/logo.background.png"
+    },
+    "plugins": [
+      [
+        "expo-localization",
+        {}
+      ],
+      [
+        "expo-router",
+        {
+          "root": "./app"
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#378CE7",
+          "image": "./assets/media/images/logo.clear.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "dark": {
+            "image": "./assets/media/images/logo.clear.png",
+            "resizeMode": "cover",
+            "backgroundColor": "#000000"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f6153b4b-bb85-4166-a388-5580cf7db242"
+      }
+    },
+    "owner": "ernestoadv"
+  }
 }

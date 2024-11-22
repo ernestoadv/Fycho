@@ -41,15 +41,18 @@ Fycho is a powerful software solution designed to automate and streamline time m
 
 ## Directory Overview
 
-The project follows a well-organized directory structure to ensure modularity, maintainability, and scalability. Here’s an overview of the key folders and their purposes within the `src` directory:
+The project follows a well-organized directory structure to ensure modularity, maintainability, and scalability. Here’s an overview of the key folders and their purposes within the `app` directory:
 
-- **`src/assets/`** - Contains various static assets used throughout the application.
-- **`src/components/`** - Houses all the reusable UI components of the application.
-- **`src/hooks/`** - Contains custom React hooks that encapsulate reusable logic.
-- **`src/store/`** - Manages global state and application data.
-- **`src/styles/`** - Centralizes styling information for the application.
-- **`src/utils/`** - Provides utility functions and managers to streamline various functionalities.
-- **`src/types/`** - Defines TypeScript types, enums and interfaces used throughout the application.
+- **`app/components/`** - Houses all the reusable UI components of the application.
+- **`app/hooks/`** - Contains custom React hooks that encapsulate reusable logic.
+- **`app/store/`** - Manages global state and application data.
+- **`app/styles/`** - Centralizes styling information for the application.
+- **`app/utils/`** - Provides utility functions and managers to streamline various functionalities.
+- **`app/types/`** - Defines TypeScript types, enums and interfaces used throughout the application.
+
+Images, fonts and other static files can be found under the `assets` directory:
+
+- **`assets/`** - Contains various assets used throughout the application such as images, literals, etc.
 
 By adhering to this directory structure, the project maintains a clean and efficient organization that facilitates development and future enhancements.
 

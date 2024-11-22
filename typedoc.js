@@ -1,5 +1,5 @@
 module.exports = {
-  entryPoints: ['src/'],
+  entryPoints: ['app/'],
   entryPointStrategy: 'expand',
   out: 'doc',
   plugin: [
